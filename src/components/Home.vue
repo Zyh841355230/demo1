@@ -20,14 +20,13 @@
           :collapse-transition="false"
           :default-active="activePath"
           router
-
         >
           <el-submenu :index="'/'+item.path" v-for="item in list" :key="item.id">
             <template slot="title">
               <i :class="iconsObj[item.id]"></i>
               <span slot="title">{{item.authName}}</span>
             </template>
-            <el-menu-item :index="'/'+subitem.path" v-for="subitem in item.children" :key="subitem.id" @click="toggleActivePath('/'+subItem.path)">
+            <el-menu-item :index="'/'+subitem.path" v-for="subitem in item.children" :key="subitem.id" @click="toggleActivePath('/'+subitem.path)">
               <i class="el-icon-menu"></i>
               <span slot="title">{{subitem.authName}}</span>
             </el-menu-item>
